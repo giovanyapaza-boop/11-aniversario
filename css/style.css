@@ -407,6 +407,70 @@ body {
     box-shadow: 0 10px 20px rgba(15, 84, 77, 0.4);
 }
 
+/* ============ ESTADOS DEL EVENTO ============ */
+
+/* Mensajes ocultos por defecto */
+.evento-en-marcha,
+.evento-realizado {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px 12px;
+    color: var(--blanco);
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+/* Mensaje mientras se realiza el evento */
+.evento-en-marcha {
+    background-color: var(--verde-profundo);
+    border: 2px solid var(--verde-claro);
+}
+
+/* Mensaje cuando el evento ya terminó */
+.evento-realizado {
+    background-color: var(--verde-oscuro);
+    border: 2px solid var(--blanco-gris);
+    opacity: 0.85;
+}
+
+/* Ocultar los números durante el evento y después de él */
+.temporizador.en-marcha .temp-bloque,
+.temporizador.finalizado .temp-bloque {
+    display: none;
+}
+
+/* Mostrar el mensaje correspondiente */
+.temporizador.en-marcha .evento-en-marcha {
+    display: flex;
+}
+
+.temporizador.finalizado .evento-realizado {
+    display: flex;
+}
+
+/* Botón del cronograma después de finalizar */
+.evento-btn-cronograma:disabled {
+    background-color: #687572;
+    color: var(--blanco);
+    cursor: not-allowed;
+    opacity: 0.75;
+    transform: none;
+    box-shadow: none;
+}
+
+.evento-btn-cronograma:disabled:hover {
+    background-color: #687572;
+    transform: none;
+    box-shadow: none;
+}
+
 /* ============ MODAL ============ */
 .modal-overlay {
     display: none;
